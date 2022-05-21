@@ -1,4 +1,6 @@
+using AutoMapper;
 using LaGranjaAPI.Data;
+using LaGranjaAPI.Repositories;
 using LaGranjaAPI.Util;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +38,12 @@ namespace LaGranjaAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+            services.AddSingleton(provider =>
+               new MapperConfiguration(config =>
+               {
+                   config.AddProfile(new AutoMapperProfiles());
+               }).CreateMapper());
+            services.AddHttpContextAccessor();
             services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             services.AddCors(options =>
@@ -66,6 +74,7 @@ namespace LaGranjaAPI
             {
                 opciones.AddPolicy("EsAdmin", policy => policy.RequireClaim("role", "admin"));
             });
+            services.AddTransient<IAlimentacionRepository, AlimentacionRepository>();
             services.AddControllers(options =>
             {
                 options.Filters.Add(typeof(FiltroDeExcepcion));
