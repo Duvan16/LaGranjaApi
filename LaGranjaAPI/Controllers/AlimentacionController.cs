@@ -38,11 +38,11 @@ namespace LaGranjaAPI.Controllers
         public async Task<ActionResult<List<AlimentacionDTO>>> Get([FromQuery] PaginacionDTO paginacionDTO)
         {
             var queryable = await _alimentacionRepository.Get();
-            await HttpContext.InsertarParametrosPaginacionEnCabecera(queryable);
-            var alimentaciones = await queryable.OrderBy(x => x.Descripcion)
-                .Paginar(paginacionDTO)
-                .ToListAsync();
-            return _mapper.Map<List<AlimentacionDTO>>(alimentaciones);
+            //await HttpContext.InsertarParametrosPaginacionEnCabecera(queryable);
+            //var alimentaciones = await queryable.OrderBy(x => x.Descripcion)
+            //    .Paginar(paginacionDTO)
+            //    .ToListAsync();
+            return _mapper.Map<List<AlimentacionDTO>>(queryable);
         }
 
         [HttpGet("{Id:int}")]
