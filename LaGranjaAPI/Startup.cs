@@ -75,6 +75,8 @@ namespace LaGranjaAPI
                 opciones.AddPolicy("EsAdmin", policy => policy.RequireClaim("role", "admin"));
             });
             services.AddTransient<IAlimentacionRepository, AlimentacionRepository>();
+            services.AddTransient<IRazaRepository, RazaRepository>();
+            services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddControllers(options =>
             {
                 options.Filters.Add(typeof(FiltroDeExcepcion));
