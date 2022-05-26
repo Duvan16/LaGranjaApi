@@ -17,6 +17,9 @@ namespace LaGranjaAPI.Util
 
             CreateMap<Cliente, ClienteDTO>().ReverseMap();
             CreateMap<ClienteCreacionDTO, Cliente>().ReverseMap();
+
+            CreateMap<Porcino, PorcinoDTO>().ReverseMap();
+            CreateMap<PorcinoCreacionDTO, Porcino>().ReverseMap();
             //CreateMap<IdentityUser, UsuarioDTO>();
         }
     }

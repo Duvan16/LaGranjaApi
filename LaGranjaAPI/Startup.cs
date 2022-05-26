@@ -77,6 +77,7 @@ namespace LaGranjaAPI
             services.AddTransient<IAlimentacionRepository, AlimentacionRepository>();
             services.AddTransient<IRazaRepository, RazaRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IPorcinoRepository, PorcinoRepository>();
             services.AddControllers(options =>
             {
                 options.Filters.Add(typeof(FiltroDeExcepcion));
