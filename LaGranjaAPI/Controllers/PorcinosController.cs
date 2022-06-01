@@ -52,6 +52,17 @@ namespace LaGranjaAPI.Controllers
             return _mapper.Map<PorcinoDTO>(Porcino);
         }
 
+        [HttpGet("filtrar")]
+        [AllowAnonymous]
+        public async Task<ActionResult<List<PorcinoDTO>>> Filtrar([FromQuery] PorcinosFiltrarDTO PorcinosFiltrarDTO)
+        {
+            var porcino = _mapper.Map<Porcino>(PorcinosFiltrarDTO);
+
+            var porcinosFilter = await _porcinoRepository.Filter(porcino);
+
+            return _mapper.Map<List<PorcinoDTO>>(porcinosFilter);
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] PorcinoCreacionDTO PorcinoCreacionDTO)
         {

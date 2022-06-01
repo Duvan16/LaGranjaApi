@@ -29,6 +29,30 @@ namespace LaGranjaAPI.Repositories
             return Porcinos.AsQueryable();
         }
 
+        public async Task<IQueryable<Porcino>> Filter(Porcino Porcino)
+        {
+
+            var PorcinosQueryable = await context.Porcinos
+                .Include(x => x.Raza)
+                .Include(x => x.Alimentacion)
+                .Include(x => x.Cliente).ToListAsync();
+
+            if (Porcino.ClienteId != 0)
+            {
+                PorcinosQueryable = PorcinosQueryable
+                    .Where(x => x.ClienteId == Porcino.ClienteId).ToList();
+            }
+
+            if (Porcino.RazaId != 0)
+            {
+                PorcinosQueryable = PorcinosQueryable
+                    .Where(x => x.RazaId == Porcino.RazaId).ToList();
+            }
+
+            return PorcinosQueryable.AsQueryable();
+        }
+
+
         public async Task Create(Porcino Porcino)
         {
             context.Add(Porcino);
