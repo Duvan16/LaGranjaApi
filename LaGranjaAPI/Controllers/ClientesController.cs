@@ -2,6 +2,7 @@
 using LaGranjaAPI.DTOs;
 using LaGranjaAPI.Entities;
 using LaGranjaAPI.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace LaGranjaAPI.Controllers
 {
     [Route("api/clientes")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
     public class ClientesController : ControllerBase
     {
         private readonly IMapper _mapper;

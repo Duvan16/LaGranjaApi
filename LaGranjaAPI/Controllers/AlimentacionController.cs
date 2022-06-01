@@ -3,6 +3,7 @@ using LaGranjaAPI.DTOs;
 using LaGranjaAPI.Entities;
 using LaGranjaAPI.Repositories;
 using LaGranjaAPI.Util;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ namespace LaGranjaAPI.Controllers
 {
     [Route("api/alimentacion")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
     public class AlimentacionController : ControllerBase
     {
         private readonly IMapper _mapper;

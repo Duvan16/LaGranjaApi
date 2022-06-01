@@ -2,6 +2,7 @@
 using LaGranjaAPI.DTOs;
 using LaGranjaAPI.Entities;
 using LaGranjaAPI.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ namespace LaGranjaAPI.Controllers
 {
     [Route("api/porcinos")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
     public class PorcinosController : ControllerBase
     {
         private readonly IMapper _mapper;

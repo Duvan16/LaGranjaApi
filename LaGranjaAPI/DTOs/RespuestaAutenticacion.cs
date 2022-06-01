@@ -1,0 +1,10 @@
+﻿using System;
+
+namespace LaGranjaAPI.DTOs
+{
+    public class RespuestaAutenticacion
+    {
+        public string Token { get; set; }
+        public DateTime Expiracion { get; set; }
+    }
+}
