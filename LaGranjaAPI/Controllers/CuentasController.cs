@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LaGranjaAPI.Data;
 using LaGranjaAPI.DTOs;
+using LaGranjaAPI.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -25,29 +26,28 @@ namespace LaGranjaAPI.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
-        private readonly ApplicationDbContext context;
+        private readonly IUsuarioRepository _usuarioRepository;
         private readonly IConfiguration configuration;
         private readonly IMapper mapper;
 
         public CuentasController(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            ApplicationDbContext context,
              IConfiguration configuration,
-             IMapper mapper
-            )
+             IMapper mapper,
+             IUsuarioRepository usuarioRepository)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
-            this.context = context;
             this.configuration = configuration;
             this.mapper = mapper;
+            this._usuarioRepository = usuarioRepository;
         }
 
         [HttpGet("listadoUsuarios")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
         public async Task<ActionResult<List<UsuarioDTO>>> ListadoUsuarios([FromQuery] PaginacionDTO paginacionDTO)
         {
-            var queryable = context.Users.AsQueryable().ToListAsync();
+            var queryable = await _usuarioRepository.Get();
             return mapper.Map<List<UsuarioDTO>>(queryable);
         }
 

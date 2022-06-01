@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LaGranjaAPI.Entities.Alimentacion">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Entities\Alimentacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaGranjaAPI.Entities.Cliente">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIEAGAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Entities\Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaGranjaAPI.Entities.Porcino">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQCAAAAAABAAAAAABCAACAAAAAAAAAABACAAAAAAAA=</HashCode>
+      <FileName>Entities\Porcino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaGranjaAPI.Entities.Raza">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Raza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaGranjaAPI.Repositories.AlimentacionRepository">
+    <Position X="6" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\AlimentacionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LaGranjaAPI.Repositories.ClienteRepository">
+    <Position X="10.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\ClienteRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LaGranjaAPI.Repositories.RazaRepository">
+    <Position X="8.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\RazaRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LaGranjaAPI.Repositories.PorcinoRepository">
+    <Position X="9.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAABAAAAAAAAAABEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\PorcinoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="LaGranjaAPI.Repositories.IAlimentacionRepository">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\IAlimentacionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LaGranjaAPI.Repositories.IClienteRepository">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\IClienteRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LaGranjaAPI.Repositories.IRazaRepository">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\IRazaRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LaGranjaAPI.Repositories.IPorcinoRepository">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAABEAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\IPorcinoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
